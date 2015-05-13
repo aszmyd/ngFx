@@ -82,7 +82,27 @@ angular.module('fx.animations.bounces.factory', ['fx.animations.assist'])
 
             if (effectForEvents.move) {
 
-                this.move = this.enter;
+                this.move = function (element, done) {
+                    var options = Assist.parseClassList(element);
+                    options.motion = 'move';
+                    options.animation = effectForEvents.move.animation;
+                    options.timeoutKey = Assist.timeoutKey;
+                    options.stagger = true;
+                    Assist.addTimer(options, element, done);
+                    var move = new TimelineMax();
+                    move.to(element, 0.01, effectForEvents.move.first);
+                    move.to(element, options.duration, effectForEvents.move.mid);
+                    move.to(element, options.duration, effectForEvents.move.third);
+                    move.to(element, options.duration, effectForEvents.move.end);
+                    return function (canceled) {
+                        if (canceled) {
+                            var timer = element.data(Assist.timeoutKey);
+                            if (timer) {
+                                Assist.removeTimer(element, Assist.timeoutKey, timer);
+                            }
+                        }
+                    };
+                };
             }
 
             if (effectForEvents.enter) {

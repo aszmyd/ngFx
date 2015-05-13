@@ -109,7 +109,11 @@ app.controller('MainController', ['$scope', '$timeout', '$q', function($scope, $
     'enter-bounce-right',
     'leave-bounce-right',
     'enter-bounce-up',
-    'leave-bounce-up'
+    'leave-bounce-up',
+    'enter-fade-right',
+    'leave-fade-right',
+    'enter-fade-up',
+    'leave-fade-up'
   ];
   $scope.demo.animations = shuffle(animations);
   $scope.demo.easings = [
