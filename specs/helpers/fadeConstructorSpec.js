@@ -6,8 +6,8 @@ describe('FadeAnimation constructor', function(){
   beforeEach(function(){
     inject(function(FadeAnimation){
       effect = {
-        enter: {opacity: 1},
-        leave: {opacity: 0},
+        in: {opacity: 1},
+        out: {opacity: 0},
         animation: 'fade-normal'
       };
       newAnimation = new FadeAnimation(effect);

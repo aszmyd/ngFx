@@ -43,7 +43,8 @@
     "angular-bootstrap": "~0.11.0",
     "angular-ui-router": "~0.2.10",
     "angular-route": "~1.3.14",
-    "bootstrap-css-only": "~3.3.4"
+    "bootstrap-css-only": "~3.3.4",
+    "ngFx": "git@github.com:aszmyd/ngFx.git#master"
   },
   "resolutions": {
     "angular": "~1.3.0"
