@@ -28,7 +28,8 @@
     "karma-unicorn-reporter": "^0.1.4",
     "mocha": "^1.18.2",
     "vinyl-paths": "^1.0.0",
-    "yargs": "^3.6.0"
+    "yargs": "^3.6.0",
+    "run-sequence": "~1.1.0"
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=PhantomJS"
